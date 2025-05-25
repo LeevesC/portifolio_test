@@ -1,0 +1,165 @@
+/*-----------------------------------*\
+  #LAYOUT
+\*-----------------------------------*/
+
+@use "variables" as *;
+
+// Main layout
+main {
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+}
+
+// Sidebar
+.sidebar {
+  background: $eerie-black-2;
+  border: 1px solid $jet;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: $shadow-1;
+  z-index: 1;
+  margin-bottom: 15px;
+  max-height: 112px;
+  overflow: hidden;
+  transition: $transition-2;
+
+  &.active {
+    max-height: 405px;
+  }
+}
+
+.sidebar-info {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar-box {
+  background: $bg-gradient-onyx;
+  border-radius: 20px;
+}
+
+.info-content .name {
+  color: $white-2;
+  font-size: $fs-3;
+  font-weight: $fw-300;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.info-content .title {
+  color: $white-1;
+  background: $onyx;
+  font-size: $fs-8;
+  font-weight: $fw-300;
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
+}
+
+.info_more-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 0 15px;
+  font-size: $fs-6;
+  color: $orange-yellow-crayola;
+  background: $border-gradient-onyx;
+  padding: 10px;
+  box-shadow: $shadow-2;
+  transition: $transition-1;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: $bg-gradient-jet;
+    transition: $transition-1;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:hover::before {
+    background: $bg-gradient-yellow-1;
+  }
+
+  span {
+    display: none;
+  }
+}
+
+.sidebar-info_more {
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-2;
+
+  .sidebar.active & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.contact-item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-info {
+  max-width: calc(100% - 46px);
+  width: calc(100% - 46px);
+}
+
+.contact-title {
+  color: $light-gray-70;
+  font-size: $fs-8;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, time, address) {
+  color: $white-2;
+  font-size: $fs-7;
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  padding-bottom: 4px;
+  padding-left: 7px;
+}
+
+.social-item .social-link {
+  color: $light-gray-70;
+  font-size: 18px;
+
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+// Main content
+.main-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}

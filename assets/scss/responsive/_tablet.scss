@@ -1,0 +1,85 @@
+/*-----------------------------------*\
+  #RESPONSIVE - TABLET (768px+)
+\*-----------------------------------*/
+
+@use "../variables" as *;
+
+// 768px and above
+@media (min-width: $breakpoint-768) {
+  .sidebar,
+  article {
+    width: 700px;
+  }
+
+  .has-scrollbar::-webkit-scrollbar-button {
+    width: 100px;
+  }
+
+  // Contact list
+  .contacts-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 15px;
+  }
+
+  // Navbar
+  .navbar-link {
+    --fs-8: 15px;
+  }
+
+  // Modal
+  .testimonials-modal {
+    max-width: 800px;
+  }
+
+  .modal-avatar-box img {
+    width: 80px;
+  }
+
+  // Resume page
+  .article-title {
+    padding-bottom: 20px;
+  }
+
+  .filter-select-box {
+    display: none;
+  }
+
+  .filter-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    padding-left: 5px;
+    margin-bottom: 30px;
+  }
+
+  .filter-item button {
+    color: $light-gray;
+    font-size: $fs-5;
+    transition: $transition-1;
+
+    &:hover {
+      color: $light-gray-70;
+    }
+
+    &.active {
+      color: $orange-yellow-crayola;
+    }
+  }
+
+  // Grid layouts
+  .project-list,
+  .blog-posts-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // Contact form
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-btn {
+    width: max-content;
+    margin-left: auto;
+  }
+}
